@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+"justfloat\startup_stm32f103xb.o"
+"justfloat\main.o"
+"justfloat\gpio.o"
+"justfloat\usart.o"
+"justfloat\stm32f1xx_it.o"
+"justfloat\stm32f1xx_hal_msp.o"
+"justfloat\stm32f1xx_hal_gpio_ex.o"
+"justfloat\stm32f1xx_hal_uart.o"
+"justfloat\stm32f1xx_hal.o"
+"justfloat\stm32f1xx_hal_rcc.o"
+"justfloat\stm32f1xx_hal_rcc_ex.o"
+"justfloat\stm32f1xx_hal_gpio.o"
+"justfloat\stm32f1xx_hal_dma.o"
+"justfloat\stm32f1xx_hal_cortex.o"
+"justfloat\stm32f1xx_hal_pwr.o"
+"justfloat\stm32f1xx_hal_flash.o"
+"justfloat\stm32f1xx_hal_flash_ex.o"
+"justfloat\stm32f1xx_hal_exti.o"
+"justfloat\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "justfloat\justfloat.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "justfloat.map" -o justfloat\justfloat.axf
