@@ -3,7 +3,7 @@
 <title>Static Call Graph - [test\test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image test\test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Wed Aug 06 09:20:01 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Wed Aug 06 18:00:35 2025
 <BR><P>
 <H3>Maximum Stack Usage =        144 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -833,9 +833,9 @@ Global Symbols
 <P><STRONG><a name="[91]"></a>HAL_UART_RxCpltCallback</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, main.o(i.HAL_UART_RxCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = HAL_UART_RxCpltCallback &rArr; atoi &rArr; strtol &rArr; _strtoul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
+<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_SetAngle(unsigned char)
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_DMA
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_SetAngle(unsigned char)
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;[local to stm32f1xx_hal_uart_c]::UART_DMAReceiveCplt(__DMA_HandleTypeDef*)
@@ -987,7 +987,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[92]"></a>Servo_SetAngle(unsigned char)</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, main.o(i._Z14Servo_SetAngleh))
+<P><STRONG><a name="[92]"></a>Servo_SetAngle(unsigned char)</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, servo.o(i._Z14Servo_SetAngleh))
 <BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_RxCpltCallback
 </UL>
 

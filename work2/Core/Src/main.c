@@ -29,6 +29,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "Servo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,14 +113,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		/*HAL_UART_Transmit_DMA(&huart1, TxData, 5);
-		HAL_Delay(1000);
-		Servo_SetAngle(0);  
-		HAL_Delay(1000);
-		Servo_SetAngle(90); 
-		HAL_Delay(1000);
-		Servo_SetAngle(180); 
-		HAL_Delay(1000);*/
+
      if (uart_tx_busy == 0)
     {
         int len = sprintf((char*)TxData, "ANGLE:%d\r\n", currentAngle);
@@ -175,14 +169,6 @@ void SystemClock_Config(void)
   }
 }
 
-/* USER CODE BEGIN 4 */
-	void Servo_SetAngle(uint8_t angle)
-	{
-    if (angle > 180) angle = 180;
-    uint16_t pulse = 500 + ((2000 * angle) / 180);
-    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, pulse);
-		currentAngle = angle; 
-	}
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart == &huart1)
@@ -223,7 +209,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             HAL_UART_Transmit(&huart1, (uint8_t*)"UNK CMD\r\n", 10, 100);
         }
 
-        HAL_UART_Receive_DMA(&huart1, RxData, 8);  // 重新启动接收
+        HAL_UART_Receive_DMA(&huart1, RxData, RX_LEN);  // 重新启动接收
     }
 }
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)

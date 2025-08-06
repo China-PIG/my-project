@@ -7,6 +7,7 @@
 "test\usart.o"
 "test\stm32f1xx_it.o"
 "test\stm32f1xx_hal_msp.o"
+"test\servo.o"
 "test\stm32f1xx_hal_gpio_ex.o"
 "test\stm32f1xx_hal_tim.o"
 "test\stm32f1xx_hal_tim_ex.o"

@@ -35,3 +35,4 @@ test\main.o: ../Core/Inc/gpio.h
 test\main.o: D:\ARM\ARMCC\Bin\..\include\string.h
 test\main.o: D:\ARM\ARMCC\Bin\..\include\stdlib.h
 test\main.o: D:\ARM\ARMCC\Bin\..\include\stdio.h
+test\main.o: .\test\Servo.h
